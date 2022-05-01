@@ -141,3 +141,53 @@ Relations:
         }
       }
     }
+
+----------------------------------------
+Relation Inverse:
+  Query:
+    {
+      articles(first:2) {
+        paginatorInfo {
+          total
+          hasMorePages
+        }
+        data {
+          id
+          title
+          author {
+            name
+            email
+          }
+        }
+      }
+    }
+
+  Result:
+    {
+      "data": {
+        "articles": {
+          "paginatorInfo": {
+            "total": 55,
+            "hasMorePages": true
+          },
+          "data": [
+            {
+              "id": "1",
+              "title": "Sit odit non sint ab quae autem voluptatem.",
+              "author": {
+                "name": "Salvatore Reichert I",
+                "email": "admin@admin.com"
+              }
+            },
+            {
+              "id": "2",
+              "title": "Doloremque vero ullam laboriosam autem in.",
+              "author": {
+                "name": "Salvatore Reichert I",
+                "email": "admin@admin.com"
+              }
+            }
+          ]
+        }
+      }
+    }
