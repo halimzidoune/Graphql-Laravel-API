@@ -232,3 +232,54 @@ Login:
         "login": "VJCz1DCpmdvB9WatqvWbXBP2RN8geZQlrQatUnWIBJCdbAyTl3UsdOuio3VE"
       }
     }
+
+Guard APi Auth:
+  Query:
+    {
+      me {
+        email
+        articles {
+          id
+          title
+        }
+      }
+    }
+
+  Header: bearer Token
+
+  Result:
+    {
+      "data": {
+        "me": {
+          "email": "admin@admin.com",
+          "articles": [
+            {
+              "id": "1",
+              "title": "Aspernatur placeat numquam dolorem laboriosam molestiae."
+            },
+            {
+              "id": "2",
+              "title": "Aut voluptatem rerum est nemo cum ullam vitae et."
+            },
+            {
+              "id": "3",
+              "title": "Odio et minima quod quia vel enim cupiditate."
+            },
+            {
+              "id": "4",
+              "title": "Quaerat dolor libero earum recusandae laudantium rem."
+            },
+            {
+              "id": "5",
+              "title": "Cupiditate voluptatem maxime dolor velit."
+            }
+          ]
+        }
+      }
+    }
+  Config-> auth-> guards->
+        "api" => [
+            "driver" => "token",
+            "provider" => "users",
+            "hash" => false
+        ]
