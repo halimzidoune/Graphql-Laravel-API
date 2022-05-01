@@ -216,3 +216,19 @@ Creaete new user:
         }
       }
     }
+
+------------------------------------------------
+Login:
+  Cretae new mutation:
+    php artisan lighthouse:mutation AuthMutator
+
+  Query:
+    mutation {
+      login(email:"graphql@test.com", password:"secret")
+    }
+  Result:
+    {
+      "data": {
+        "login": "VJCz1DCpmdvB9WatqvWbXBP2RN8geZQlrQatUnWIBJCdbAyTl3UsdOuio3VE"
+      }
+    }
