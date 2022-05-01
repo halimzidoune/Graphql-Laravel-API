@@ -32,3 +32,22 @@ All Users: {
       }
     }
 
+---------------------------------:;
+
+Find one user:
+  Graphql query: 
+    {
+      user(id:1) {
+        email
+        name
+      }
+    }
+  Result:
+    {
+      "data": {
+        "user": {
+          "email": "graphql@test.com",
+          "name": "Carolyn Powlowski"
+        }
+      }
+    }
