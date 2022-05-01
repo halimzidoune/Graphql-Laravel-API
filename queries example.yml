@@ -191,3 +191,28 @@ Relation Inverse:
         }
       }
     }
+
+-------------------------------------------
+Creaete new user:
+  Query:
+    mutation {
+      createUser(
+        name:"John Doe"
+        email:"john.doe@example.com"
+        password:"secret"
+      ) {
+        id
+        name
+        email
+      }
+    }
+  Result:
+    {
+      "data": {
+        "createUser": {
+          "id": "12",
+          "name": "John Doe",
+          "email": "john.doe@example.com"
+        }
+      }
+    }
