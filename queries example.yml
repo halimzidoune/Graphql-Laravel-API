@@ -100,3 +100,44 @@ All Users with pagination :
         }
       }
     }
+
+------------------------------------
+Relations:
+  query:
+    {
+      user(id:1) {
+        articles {
+          id
+          title
+        }
+      }
+    }
+  Result:
+    {
+      "data": {
+        "user": {
+          "articles": [
+            {
+              "id": "1",
+              "title": "Sit odit non sint ab quae autem voluptatem."
+            },
+            {
+              "id": "2",
+              "title": "Doloremque vero ullam laboriosam autem in."
+            },
+            {
+              "id": "3",
+              "title": "Nesciunt eos et delectus aut nostrum."
+            },
+            {
+              "id": "4",
+              "title": "Mollitia sit tempora architecto autem."
+            },
+            {
+              "id": "5",
+              "title": "Facere quae facere fuga labore quis quia."
+            }
+          ]
+        }
+      }
+    }
