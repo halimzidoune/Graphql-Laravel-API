@@ -25,4 +25,9 @@ type Mutation {
     email: String! @rules(apply: ["email", "unique:users"])
     password: String! @hash @rules(apply: ["min:6"])
   ): User @create
+
+  login(
+    email: String! 
+    password: String!
+  ): String @field(resolver: "AuthMutator@resolve")
 }
