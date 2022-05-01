@@ -32,4 +32,7 @@ type Mutation {
     email: String! 
     password: String!
   ): String @field(resolver: "AuthMutator@resolve")
+
+  createArticle(title: String!, content: String!): Article @guard(with: ["api"]) 
+    @field(resolver: "ArticleMutator@create")
 }

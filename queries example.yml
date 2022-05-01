@@ -283,3 +283,32 @@ Guard APi Auth:
             "provider" => "users",
             "hash" => false
         ]
+
+-------------------------
+Middleware:
+  Query:    
+    mutation {
+      createArticle(
+        title:"Building a GraphQL Server with Laravel"
+        content:"In case you're not currently familiar with it, GraphQL is a query language used to interact with your API..."
+      ) {
+        id
+        author {
+          id
+          email
+        }
+      }
+    }
+
+  Result:
+    {
+      "data": {
+        "createArticle": {
+          "id": "56",
+          "author": {
+            "id": "1",
+            "email": "admin@admin.com"
+          }
+        }
+      }
+    }
